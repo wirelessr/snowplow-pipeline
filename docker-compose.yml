@@ -90,7 +90,8 @@ services:
       POSTGRES_USER: sp_user
       POSTGRES_PASSWORD: sp_password
       POSTGRES_DB: igludb
-
+    volumes:
+       - pgdata:/var/lib/postgresql/data
 
   iglu-server:
     container_name: iglu-server
@@ -117,7 +118,4 @@ services:
       context: ./events-processor
 
 volumes:
-  zk-data: {}
-  zk-logs: {}
-  kafka-data: {}
-  secrets: {}
+  pgdata:

@@ -13,7 +13,7 @@ spec:
         app: collector
     spec:
       containers:
-        - image: snowplow-docker-registry.bintray.io/snowplow/scala-stream-collector-kafka:0.14.0
+        - image: snowplow/scala-stream-collector-kafka
           imagePullPolicy: IfNotPresent
           env:
             - name: SP_JAVA_OPTS

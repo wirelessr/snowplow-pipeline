@@ -23,7 +23,7 @@ In addition, the schema of iglu server must be initialized.
 ```sh
 docker-compose run iglu-server setup --config /snowplow/config/config.hocon
 ```
-After that, make sure all the containers are up with `docker-compose ps`. If not, try to run the command again.
+After that, make sure all the containers are up with `docker-compose ps`. If not, try to run the up again.
 
 This command will create all the components and also a simple web application that sends pageviews and other events to the collector.
 Please checkout the `docker-compose.yml` file for more details.

@@ -57,7 +57,7 @@ services:
       PORT: 9021
 
   scala-stream-collector:
-    image: snowplow/scala-stream-collector-kafka
+    image: snowplow/scala-stream-collector-kafka:2.9.2
     command: [ "--config", "/snowplow/config/config.hocon" ]
     depends_on:
       - kafka
@@ -69,7 +69,7 @@ services:
       - "SP_JAVA_OPTS=-Xms512m -Xmx512m"
 
   stream-enrich:
-    image: snowplow/stream-enrich-kafka
+    image: snowplow/stream-enrich-kafka:3.8.1
     command: [
       "--config", "/snowplow/config/config.hocon",
       "--resolver", "file:/snowplow/config/resolver.json"
@@ -95,7 +95,7 @@ services:
 
   iglu-server:
     container_name: iglu-server
-    image: snowplow/iglu-server
+    image: snowplow/iglu-server:0.10.1
     command: [ "--config", "/snowplow/config/config.hocon" ]
     depends_on:
       - iglu-postgres
